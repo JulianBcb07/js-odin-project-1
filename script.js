@@ -27,14 +27,14 @@ const getComputerChoice = () => {
 const getHumanChoice = () => {
     humanValue = '';
 
-    while (humanValue === null || humanValue === '') {
+    while (true) { // infinite loop 
         humanValue = prompt("Input choice between Rock, Paper or scissors");
-        if (humanValue === null || humanValue === '')
-            alert("Value don't be null");
+        if (["rock", "paper", "scissors"].includes(humanValue)) {
+            return humanValue.trim().toLowerCase();
+        } else {
+            alert("Invalid choice! Please enter rock, paper or scissors");
+        }
     }
-
-    // console.log(humanValue);
-    return humanValue.trim().toLowerCase();
 }
 
 
